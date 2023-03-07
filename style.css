@@ -3,22 +3,40 @@ body{
     color: #fff;
 }
 
+/* Nav spacing */
 nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     flex-wrap: wrap;
-    width: 50%;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
+/* nav styling */
 nav li{
     display: inline-block;
     list-style: none;
 }
 
+/* text styling */
 nav li a{
     color: #fff;
     text-decoration: none;
     font-size: 18px;
+    padding: 20px;
+}
+
+/* class styling of navigation bar */
+.container{
+    text-align: center;
+}
+
+/* adding padding to the search buttong */
+.fa-solid{
+    padding-left: 20px;
+}
+
+.topnav{
+    margin-left: 40px;
+    margin-right: 40px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
 }
