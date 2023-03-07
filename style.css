@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: monospace;
 }
 
 body{
@@ -58,7 +59,7 @@ nav li a{
 
 .headertext p{
     margin-top: 35%;
-    font-size: 50px;
+    font-size: 100px;
     text-align: left;
 }
 
