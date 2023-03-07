@@ -30,8 +30,7 @@ nav li a{
 
 /* class styling of navigation bar */
 .container{
-
-    text-align: center;
+    
 }
 
 /* adding padding to the search buttong */
@@ -45,6 +44,7 @@ nav li a{
     padding: 20px;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 /* full screen background image */
@@ -54,4 +54,19 @@ nav li a{
     background-image: url(images/homepic.webp) ;
     background-size: cover;
     background-position: center;
+}
+
+.headertext p{
+    margin-top: 35%;
+    font-size: 50px;
+    text-align: left;
+}
+
+.headertext h3{
+    font-size: 20px;
+}
+
+.border{
+    padding-left: 45px;
+    padding-right: 45px;
 }
