@@ -4,6 +4,6 @@
 Step One:
 Download Visual Studio Code<br>
 Step Two:
-Open the Folder "Portfolio" in VS Code <br>
+Open the Folder "Snowsite" in VS Code <br>
 Stop Three:
 Click "Run"
