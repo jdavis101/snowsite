@@ -58,7 +58,7 @@ nav li a{
 }
 
 .headertext p{
-    margin-top: 35%;
+    margin-top: 17%;
     font-size: 100px;
     text-align: left;
 }
@@ -71,3 +71,27 @@ nav li a{
     padding-left: 45px;
     padding-right: 45px;
 }
+
+.sreport{
+    font-size: 40px;
+    color: #fff;
+    text-align: right;
+    padding-top: 10%;
+    padding-right: 15%;
+}
+
+#shade{
+    background-color: rgba( 0,0,0, 0.6);
+    padding: 20px;
+    border-radius: 15px;
+    width: max-content;
+    margin-left: 70%;
+}
+
+
+
+
+
+/* Mobile config */
+/* do not add big photo, for loading purposes */
+
