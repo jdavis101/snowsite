@@ -35,7 +35,7 @@ nav li a{
 }
 
 /* adding padding to the search buttong */
-.fa-solid{
+.fa-magnifying-glass{
     padding-left: 20px;
 }
 
@@ -58,7 +58,7 @@ nav li a{
 }
 
 .headertext p{
-    margin-top: 17%;
+    margin-top: 7%;
     font-size: 100px;
     text-align: left;
 }
@@ -75,8 +75,7 @@ nav li a{
 .sreport{
     font-size: 40px;
     color: #fff;
-    text-align: right;
-    padding-top: 10%;
+    /* text-align: left; */
     padding-right: 15%;
 }
 
@@ -84,8 +83,14 @@ nav li a{
     background-color: rgba( 0,0,0, 0.6);
     padding: 20px;
     border-radius: 15px;
-    width: max-content;
-    margin-left: 70%;
+    width: 27%;
+    margin-left: 60%;
+    margin-top: 12%;
+}
+
+.ricons{
+    padding-top: 15px;
+    font-size: 25px;
 }
 
 
