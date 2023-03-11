@@ -10,6 +10,7 @@ body{
     color: #fff;
 }
 
+
 /* Nav spacing */
 nav{
     flex-wrap: wrap;
@@ -53,6 +54,14 @@ nav li a{
     width: 100%;
     height: 100vh;
     background-image: url(images/homepic.webp) ;
+    background-size: cover;
+    background-position: center;
+}
+
+#header2{
+    width: 100%;
+    height: 50%;
+    background-color: rgba(21,86,154,255);
     background-size: cover;
     background-position: center;
 }

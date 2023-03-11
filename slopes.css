@@ -1,0 +1,14 @@
+.bg{
+    background-color: white;
+    margin-left: 15%;
+    margin-right: 15%;
+    background-position: center;
+    height: 1000px;
+    border-radius: 20px;
+}
+
+.bg p{
+    padding-top: 20px;
+    padding-left: 20px;
+    color: rgba(21,86,154,255);
+}
