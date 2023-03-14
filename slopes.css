@@ -7,8 +7,16 @@
     border-radius: 20px;
 }
 
-.bg p{
-    padding-top: 20px;
+/* App Ski */
+.bg h2{
+    padding-top: 50px;
     padding-left: 20px;
-    color: rgba(21,86,154,255);
+    color: black;
+    /* color: rgba(21,86,154,255); */
 }
+
+.spacing{
+    padding-left: 20px;
+
+}
+
