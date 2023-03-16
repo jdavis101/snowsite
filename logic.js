@@ -1,26 +1,30 @@
+let link;
+callApi();
+weatherLogic(link);
 
-fetch(apiUrl)
+function callApi(){
+  
+}
+
+function weatherLogic(apiUrl){
+  fetch(apiUrl)
   .then(response => response.json())
   .then(data => {
     
-    const weatherIcon = getWeatherIcon(data.weather[0].main);
+    const firstWeather = getWeatherIcon(data.weather[0].main);
     //returns in kelvin
-    //const weatherInfo = `${data.main.temp.toFixed()}°F`;
-
-    // (K − 273.15) × 9/5 + 32
     const kelvin = data.main.temp;
+    //Kelvin to Farenheit conversion
     const k2f = (kelvin-273.15)* (9/5) + 32;
-    // document.write(kelvin);
-    // document.write("\n");
-    //document.write(k2f);
-
-    const weatherInfo = `${k2f.toFixed()}°F Boone`;
+    //prints the weather in F
+    const firstInfo = `${k2f.toFixed()}°F Boone`;
 
 
-    document.querySelector('.weather-icon').innerHTML = weatherIcon;
-    document.querySelector('.weather-info').innerHTML = weatherInfo;
+    document.querySelector('.first-icon').innerHTML = firstWeather;
+    document.querySelector('.first-info').innerHTML = firstInfo;
   })
   .catch(error => console.error(error));
+}
 
 function getWeatherIcon(weather) {
   switch (weather) {
