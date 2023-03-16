@@ -66,19 +66,29 @@ nav li a{
     background-position: center;
 }
 
-.headertext p{
+
+
+.headertext{
     margin-top: 7%;
+    padding-left: 45px;
+    padding-right: 45px;
+    padding-bottom: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+}
+
+.headertext p{
+    /* margin-top: 7%; */
     font-size: 100px;
     text-align: left;
+    
 }
 
 .headertext h3{
     font-size: 20px;
-}
 
-.border{
-    padding-left: 45px;
-    padding-right: 45px;
 }
 
 .sreport{

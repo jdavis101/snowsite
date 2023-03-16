@@ -1,10 +1,21 @@
 let link;
-callApi();
+//apikey from another file 
+
+//App Ski Mountain
+let city = 'Boone';
+let state = 'NorthCarolina';
+let country = 'US';
+
+callApi(city, state, country, apiKey);
 weatherLogic(link);
 
-function callApi(){
-  
-}
+//Catalooche Mountain
+city2 = 'Cata';
+state2 = 'NorthCarolina';
+country2 = 'US';
+
+function callApi(city,state,country, apiKey){
+  link = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=${apiKey}`;}
 
 function weatherLogic(apiUrl){
   fetch(apiUrl)
