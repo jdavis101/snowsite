@@ -1,0 +1,10 @@
+nav{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    width: 40%;
+    top: 5px;
+    background-color: rgba( 0,0,0, 0.6);
+    border-radius: 15px;
+}
