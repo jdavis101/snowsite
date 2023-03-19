@@ -1,5 +1,6 @@
 import {
-  apiKey
+  weatherApiKey,
+  googleApiKey
 } from './.git/secret.js';
 
 getLocation()
@@ -29,12 +30,16 @@ const locations = [
     iconSelector: ".third-icon",
     infoSelector: ".third-info"
   }
-  // add more locations as needed
 ];
 
 // make API calls and update UI for each location
 locations.forEach(location => {
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location.city},${location.state},${location.country}&appid=${apiKey}`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location.city},${location.state},${location.country}&appid=${weatherApiKey}`;
+  console.log(apiUrl);
+  console.log('before');
+  setTimeout(function(){
+    console.log('after');
+  },500);
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
@@ -58,6 +63,9 @@ function getWeatherIcon(weather) {
       return '<i class="fas fa-cloud-rain"></i>';
     case 'Snow':
       return '<i class="fas fa-snowflake"></i>';
+    case 'Haze':
+    case 'Fog':
+      return '<i class="fa-solid fa-smog"></i>';
     default:
       return '<i class="fas fa-question"></i>';
   }
