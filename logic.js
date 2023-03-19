@@ -5,8 +5,6 @@ import {
 
 getLocation()
 
-
-
 //For loop for locations 
 const locations = [
   {
