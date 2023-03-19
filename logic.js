@@ -4,7 +4,7 @@ import {
 } from './.git/secret.js';
 
 getLocation()
-
+// support@github.com
 //For loop for locations 
 const locations = [
   {
