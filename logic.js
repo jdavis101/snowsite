@@ -18,8 +18,11 @@ function callApi(){
   + city
   + ","
   + country
+  
   + "&appid=" 
+
   + ghost);
+
 }
 
 function weatherLogic(apiUrl){
