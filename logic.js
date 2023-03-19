@@ -1,21 +1,30 @@
-let link;
-//apikey from another file 
+
 
 //App Ski Mountain
-let city = 'Boone';
-let state = 'NorthCarolina';
-let country = 'US';
+let city = "Boone";
+let state = "NorthCarolina";
+let country = "US";
+key = "";
 
-callApi(city, state, country, apiKey);
-weatherLogic(link);
 
 //Catalooche Mountain
-city2 = 'Cata';
-state2 = 'NorthCarolina';
-country2 = 'US';
 
-function callApi(city,state,country, apiKey){
-  link = `https://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=${apiKey}`;}
+
+
+
+callApi();
+
+
+function callApi(){
+  weatherLogic("https://api.openweathermap.org/data/2.5/weather?q=" 
+  + city 
+  + ","
+  + city
+  + ","
+  + country
+  + "&appid=" 
+  + key);
+}
 
 function weatherLogic(apiUrl){
   fetch(apiUrl)
@@ -33,6 +42,8 @@ function weatherLogic(apiUrl){
 
     document.querySelector('.first-icon').innerHTML = firstWeather;
     document.querySelector('.first-info').innerHTML = firstInfo;
+    document.querySelector('.first-icon').innerHTML = secondWeather;
+    document.querySelector('.first-info').innerHTML = secondInfo;
   })
   .catch(error => console.error(error));
 }
