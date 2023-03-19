@@ -1,58 +1,64 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset = "UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sloperty</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="https://kit.fontawesome.com/3614e86d32.js" crossorigin="anonymous"></script>
-        <script async src="https://maps.googleapis.com/maps/api/js?key=apikey&callback=getStateFromLatLng"></script>
-        <script src="logic.js" type="module"></script> 
-    </head>
-    <body>
-        <div id="header">
-            <div class="container">
-                <nav class="topnav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="slopes.html">Slopes</a></li>
-                    <li><a href="planner.html">Plan Your Trip</a></li>
-                    <li><a href="header">About Us</a></li>
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </nav>
-                <div id="shade">
-                    <h3 class="sreport">Snow Report</h3>
-                    <!-- <br> -->
-                    <!-- Pull weather data to complete this action-->
-                    <p class="ricons">
-                        <!-- closest weather -->
-                        <!-- boone -->
-                        <span class="first-icon"></span>
-                        <span class="first-info"></span>
-                        <!-- second closest weather -->
-                        <!-- MaggieValley -->
-                        <br>
-                        <span class="second-icon"></span>
-                        <span class="second-info"></span>
-                        <!-- third closest weather -->
-                        <!-- random other place -->
-                        <br>
-                        <span class="third-icon"></span>
-                        <span class="third-info"></span>
-                        <p id="map"></p>
-                    </p>
-                    </p>
-                </div>
-                <div class="headertext ">
-                    <!-- brim is the background image on the homepage text -->
-                    <p>Snowable</p>
-                    <h3>Your all in one guide to Snowboarding, Skiing, and anything
-                        in between.
-                    </h3>
-                </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloperty</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3614e86d32.js" crossorigin="anonymous"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=apikey&callback=getStateFromLatLng"></script>
+    <script src="logic.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body>
+    <div id="header">
+        <div class="container">
+            <!--Navigation bar-->
+            <div id="nav-placeholder">
+            </div>
+            <script>
+                $(function () {
+                    $("#nav-placeholder").load("nav.html");
+                });
+            </script>
+            <!--end of Navigation bar-->
+            <div id="shade">
+                <h3 class="sreport">Snow Report</h3>
+                <!-- <br> -->
+                <!-- Pull weather data to complete this action-->
+                <p class="ricons">
+                    <!-- closest weather -->
+                    <!-- boone -->
+                    <span class="first-icon"></span>
+                    <span class="first-info"></span>
+                    <!-- second closest weather -->
+                    <!-- MaggieValley -->
+                    <br>
+                    <span class="second-icon"></span>
+                    <span class="second-info"></span>
+                    <!-- third closest weather -->
+                    <!-- random other place -->
+                    <br>
+                    <span class="third-icon"></span>
+                    <span class="third-info"></span>
+                <p id="map"></p>
+                </p>
+                </p>
+            </div>
+            <div class="headertext ">
+                <!-- brim is the background image on the homepage text -->
+                <p>Snowable</p>
+                <h3>Your all in one guide to Snowboarding, Skiing, and anything
+                    in between.
+                </h3>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+</body>
+
 </html>
 
+</html>
