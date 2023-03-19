@@ -1,28 +1,28 @@
 import {
   ghost
 } from './.git/secret.js'
+
 //App Ski Mountain
 let city = "Boone";
 let state = "NorthCarolina";
 let country = "US";
-//key = ghost;
-
+callApi(city, state, country);
 
 //Catalooche Mountain
-callApi();
+let city2 = "Novosibirsk";
+let state2 = "Novosibirsk Oblast";
+let country2 = "Russia";
+callApi(city2, state2, country2);
 
-function callApi(){
+function callApi(city, state, country){
   weatherLogic("https://api.openweathermap.org/data/2.5/weather?q=" 
   + city 
   + ","
-  + city
+  + state
   + ","
   + country
-  
   + "&appid=" 
-
   + ghost);
-
 }
 
 function weatherLogic(apiUrl){
@@ -30,22 +30,37 @@ function weatherLogic(apiUrl){
   .then(response => response.json())
   .then(data => {
     
+  //This will probably need a loop to have all three places
+
     const firstWeather = getWeatherIcon(data.weather[0].main);
     //returns in kelvin
     const kelvin = data.main.temp;
     //Kelvin to Farenheit conversion
     const k2f = (kelvin-273.15)* (9/5) + 32;
     //prints the weather in F
-    const firstInfo = `${k2f.toFixed()}°F Boone`;
+    const firstInfo = k2f.toFixed()+ "°F " + city;
+
+    // cataloochee
+    const secondWeather = getWeatherIcon(data.weather[0].main);
+    //returns in kelvin
+    const kelvin2 = data.main.temp;
+    //Kelvin to Farenheit conversion
+    const k2f2 = (kelvin2-273.15)* (9/5) + 32;
+    //prints the weather in F
+    const secondInfo = k2f2.toFixed()+ "°F " + city2;
 
 
     document.querySelector('.first-icon').innerHTML = firstWeather;
     document.querySelector('.first-info').innerHTML = firstInfo;
-    // document.querySelector('.first-icon').innerHTML = secondWeather;
-    // document.querySelector('.first-info').innerHTML = secondInfo;
+    document.querySelector('.second-icon').innerHTML = secondWeather;
+    document.querySelector('.second-info').innerHTML = secondInfo;
   })
   .catch(error => console.error(error));
 }
+
+
+
+
 
 function getWeatherIcon(weather) {
   switch (weather) {
