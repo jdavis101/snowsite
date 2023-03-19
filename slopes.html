@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset = "UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Slopes</title>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="slopes.css">
-        <script src="https://kit.fontawesome.com/3614e86d32.js" crossorigin="anonymous"></script>
-    </head>
-    <body id="header2">
-        <div>
-            <div class="container">
-                <nav class="topnav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="slopes.html">Slopes</a></li>
-                    <li><a href="header">Plan Your Trip</a></li>
-                    <li><a href="header">About Us</a></li>
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </nav>
-                <div class="box">
-                </div>
-                
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slopes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="slopes.css">
+    <script src="https://kit.fontawesome.com/3614e86d32.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+
+<body id="header2">
+    <div>
+        <div class="container">
+            <!--Navigation bar-->
+            <div id="nav-placeholder">
             </div>
-            <div class="bg">
-                <h2>App Ski Mountain</h2>
-                <h2>Beech Mountain</h2>
-                <h2>Sugar Mountain</h2>
-                <h2>Cataloochee Mountain</h2>
+            <script>
+                $(function () {
+                    $("#nav-placeholder").load("nav.html");
+                });
+            </script>
+            <!--end of Navigation bar-->
+            <div class="box">
             </div>
+
         </div>
-    </body>
+        <div class="bg">
+            <h2>App Ski Mountain</h2>
+            <h2>Beech Mountain</h2>
+            <h2>Sugar Mountain</h2>
+            <h2>Cataloochee Mountain</h2>
+        </div>
+    </div>
+</body>
+
 </html>
+
 </html>
