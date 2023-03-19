@@ -1,10 +1,11 @@
-
-
+import {
+  ghost
+} from './.git/secret.js'
 //App Ski Mountain
 let city = "Boone";
 let state = "NorthCarolina";
 let country = "US";
-key = "";
+//key = ghost;
 
 
 //Catalooche Mountain
@@ -18,7 +19,7 @@ function callApi(){
   + ","
   + country
   + "&appid=" 
-  + key);
+  + ghost);
 }
 
 function weatherLogic(apiUrl){
@@ -37,8 +38,8 @@ function weatherLogic(apiUrl){
 
     document.querySelector('.first-icon').innerHTML = firstWeather;
     document.querySelector('.first-info').innerHTML = firstInfo;
-    document.querySelector('.first-icon').innerHTML = secondWeather;
-    document.querySelector('.first-info').innerHTML = secondInfo;
+    // document.querySelector('.first-icon').innerHTML = secondWeather;
+    // document.querySelector('.first-info').innerHTML = secondInfo;
   })
   .catch(error => console.error(error));
 }
