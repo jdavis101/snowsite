@@ -33,9 +33,13 @@ const locations = [
   }
 ];
 
+
+
+
 // make API calls and update UI for each location
 locations.forEach(location => {
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location.city},${location.state},${location.country}&appid=${weatherApiKey}`;
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location.city},
+  ${location.state},${location.country}&appid=${weatherApiKey}`;
   console.log('openWeatherApi');
   fetch(apiUrl)
     .then(response => response.json())
