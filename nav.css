@@ -1,13 +1,9 @@
 nav{
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0 auto;
+    width: 40%;
     background-color: rgba( 0,0,0, 0.6);
-    padding: 20px;
     border-radius: 15px;
-   left:540px;      
-   right:540px;
-
-
-
- 
-    max-width: 40%;
-
 }
