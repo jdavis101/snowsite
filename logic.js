@@ -3,10 +3,13 @@ import {
   googleApiKey
 } from './.git/secret.js';
 
+var script = document.createElement('script');
+script.src = 'https://maps.googleapis.com/maps/api/js?key=' + googleApiKey + '&callback=getStateFromLatLng';
+script.async = true;
+document.head.appendChild(script);
 
 
 getLocation()
-//initMap()
 // support@github.com
 //For loop for locations 
 const locations = [
@@ -87,7 +90,7 @@ function getLocation() {
 
 function showPosition(position) {
    console.log("Latitude: " + position.coords.latitude + 
-  "Longitude: " + position.coords.longitude);
+  "\nLongitude: " + position.coords.longitude);
   const long = position.coords.longitude;
   const lata = position.coords.latitude;
   getStateFromLatLng(lata, long);
