@@ -7,9 +7,19 @@ var script = document.createElement('script');
 script.src = 'https://maps.googleapis.com/maps/api/js?key=' + googleApiKey + '&callback=getStateFromLatLng';
 script.async = true;
 document.head.appendChild(script);
+var cty = "default";
+var state, country, pos;
+
+getLocation();
+console.log("my position is = "+pos);
+// showPosition(position);
 
 
-getLocation()
+console.log(cty);
+console.log(state);
+console.log(country);
+
+
 // support@github.com
 //For loop for locations 
 const locations = [
@@ -80,25 +90,29 @@ function getWeatherIcon(weather) {
 }
 
 function getLocation() {
-  console.log("getlocationmethod");
+  console.log("stage one");
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
+    pos = console.log(navigator.geolocation.getCurrentPosition(showPosition));
+    //console.log(navigator.geolocation.getCurrentPosition(showPosition))
   } else { 
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
 
+//  what is this position and where is it coming from?
 function showPosition(position) {
+    console.log("position = "+ position);
    console.log("Latitude: " + position.coords.latitude + 
   "\nLongitude: " + position.coords.longitude);
   const long = position.coords.longitude;
   const lata = position.coords.latitude;
-  getStateFromLatLng(lata, long);
+  getLocationFromLatLng(lata, long);
 }
 
 
 //  Somehow get the state form this code below
-function getStateFromLatLng(lata, long) {
+function getLocationFromLatLng(lata, long) {
   // Create a new Geocoder object
   console.log('First google call');
   var geocoder = new google.maps.Geocoder();
@@ -126,12 +140,15 @@ function getStateFromLatLng(lata, long) {
           var component = results[i].address_components[j];
           if (component.types.indexOf('locality') != -1) {
             address.city = component.long_name;
+             cty = address.city;
           }
           if (component.types.indexOf('administrative_area_level_1') != -1) {
             address.state = component.long_name;
+            state = address.state;
           }
           if (component.types.indexOf('country') != -1) {
             address.country = component.long_name;
+            country = address.country;
           }
         }
       }
