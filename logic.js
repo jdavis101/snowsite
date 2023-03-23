@@ -5,26 +5,19 @@ import {
 
 var script = document.createElement('script');
 script.src = 'https://maps.googleapis.com/maps/api/js?key=' + googleApiKey + '&callback=getStateFromLatLng';
-script.async = true;
+//script.async = true;
 document.head.appendChild(script);
-
-
+var apiUrl;
+var latitude,longitude;
 
 var cty, state, country, pos;
 
-var locations = [];
 
 getLocation();
-displayWeather();
-//showPosition(position);
 
 
-
-
-// make API calls and update UI for each location
-function displayWeather(){
-console.log("displayWeather");
-locations = [
+console.log("locations list");
+var locations = [
   {
     city: "Boone",
     state: "North Carolina",
@@ -47,8 +40,51 @@ locations = [
     infoSelector: ".third-info"
   }
 ];
-  locations.forEach(location => {
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location.city},
+
+navigator.geolocation.getCurrentPosition(success, error);
+
+function success(position) {
+  latitude = position.coords.latitude;
+  longitude = position.coords.longitude;
+  // Make a request to Google Maps API geocoding service
+  const url = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=${googleApiKey}`;
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      // Extract city, state, and country from API response
+      const addressComponents = data.results[0].address_components;
+      const city = addressComponents.find(component => component.types.includes("locality")).long_name;
+      const state = addressComponents.find(component => component.types.includes("administrative_area_level_1")).long_name;
+      const country = addressComponents.find(component => component.types.includes("country")).long_name;
+      console.log(`City: ${city}, State: ${state}, Country: ${country}`);
+      // Update the first location in the array with the new information
+      locations[0].city = city;
+      locations[0].state = state;
+      locations[0].country = country;
+
+      //dynamically updated locations list
+      
+      // locations[0].city = "Anadyr";
+      // locations[0].state = "Chukotka Autonomous Okrug";
+      // locations[0].country = "Russia";
+
+      // Now you can run any code that relies on the updated location information
+      console.log(locations);
+      loopyloop();
+    })
+    .catch(error => console.log(error));
+}
+
+function error(error) {
+  console.log(error.message);
+}
+
+//Code ran right afterlocation list
+function loopyloop(){
+  for (let i = 0; i < locations.length; i++) {
+    console.log("locations.foreach()");
+    const location = locations[i];
+    apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location.city},
     ${location.state},${location.country}&appid=${weatherApiKey}`;
     fetch(apiUrl)
       .then(response => response.json())
@@ -64,11 +100,32 @@ locations = [
         document.querySelector(location.infoSelector).innerHTML = weatherInfo;
       })
       .catch(error => console.error(error));
-  });
+  }
+}
+
+
+// make API calls and update UI for each location
+function getLocation() {
+  console.log("getLocation()");
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+//  what is this position and where is it coming from?
+function showPosition(position) {
+  console.log("showposition()" );
+  // console.log("Latitude: " + position.coords.latitude + 
+  // "\nLongitude: " + position.coords.longitude);
+  long = position.coords.longitude;
+  lata = position.coords.latitude;
+  getLocationFromLatLng(lata, long);
 }
 
 function getWeatherIcon(weather) {
-  console.log("getting weather icon");
+  console.log("getWeatherIcon()");
   switch (weather) {
     case 'Clear':
       return '<i class="fas fa-sun"></i>';
@@ -86,86 +143,4 @@ function getWeatherIcon(weather) {
   }
 }
 
-function getLocation() {
-  console.log("getLocation ran");
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-    //console.log(navigator.geolocation.getCurrentPosition(showPosition))
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-//  what is this position and where is it coming from?
-function showPosition(position) {
-  console.log("showposition function");
-  // console.log("Latitude: " + position.coords.latitude + 
-  // "\nLongitude: " + position.coords.longitude);
-  const long = position.coords.longitude;
-  const lata = position.coords.latitude;
-  getLocationFromLatLng(lata, long);
-}
-
-//  Somehow get the state form this code below
-function getLocationFromLatLng(lata, long) {
-  console.log("get locationfromLL function");
-  // Create a new Geocoder object
-  var geocoder = new google.maps.Geocoder();
-  //wait time in between api calls
-  setTimeout(function(){
-  },500);
-
-  // Create a LatLng object from the input coordinates
-  var latLng = new google.maps.LatLng(lata, long);
-  //wait time in between api calls
-  setTimeout(function(){
-  },500);
-  console.log("The city is " + locations[0].city);
-
-  console.log(locations[0].city);
-  // Call the geocode() method to get information about the location
-  // retrieves the user city, state, country
-  geocoder.geocode({ 'latLng': latLng }, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      // Loop through the results to find the state
-      var address = {};
-      console.log("calling loops");
-      for (var i = 0; i < results.length; i++) {
-        for (var j = 0; j < results[i].address_components.length; j++) {
-          var component = results[i].address_components[j];
-          if (component.types.indexOf('locality') != -1) {
-            address.city = component.long_name;
-             cty = address.city;
-          }
-          if (component.types.indexOf('administrative_area_level_1') != -1) {
-            address.state = component.long_name;
-            state = address.state;
-          }
-          if (component.types.indexOf('country') != -1) {
-            address.country = component.long_name;
-            country = address.country;
-          }
-        }
-      }
-      //how do I set this city in the location list??
-      // console.log(locations[0].city);
-      // console.log(locations[0].state);
-      // console.log(locations[0].country);
-
-      locations[0].city = "Schwenksville";
-      locations[0].state = "PA";
-      locations[0].country = "US";
-      
-      console.log("The city is " + locations[0].city);
-
-      console.log(cty);
-      console.log(address);
-      //return address;
-    } else {
-      console.log('Geocode failed: ' + status);
-    }
-  });
-
-
-}
 
