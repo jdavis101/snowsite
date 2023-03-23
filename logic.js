@@ -4,7 +4,13 @@ import {
 } from './.git/secret.js';
 
 var script = document.createElement('script');
-script.src = 'https://maps.googleapis.com/maps/api/js?key=' + googleApiKey + '&callback=getStateFromLatLng';
+script.src = 'https://maps.googleapis.com/maps/api/js?key=' + 
+googleApiKey + '&callback=initMap';
+
+window.initMap = function() {
+  // JS API is loaded and available
+};
+
 //script.async = true;
 document.head.appendChild(script);
 var apiUrl;
@@ -55,7 +61,7 @@ function success(position) {
       const city = addressComponents.find(component => component.types.includes("locality")).long_name;
       const state = addressComponents.find(component => component.types.includes("administrative_area_level_1")).long_name;
       const country = addressComponents.find(component => component.types.includes("country")).long_name;
-      console.log(`City: ${city}, State: ${state}, Country: ${country}`);
+      //console.log(`City: ${city}, State: ${state}, Country: ${country}`);
       // Update the first location in the array with the new information
       locations[0].city = city;
       locations[0].state = state;
@@ -98,10 +104,10 @@ function loopyloop(){
         document.querySelector(location.iconSelector).innerHTML = weatherIcon;
         document.querySelector(location.infoSelector).innerHTML = weatherInfo;
       })
-      .catch(error => console.error(error));
+      .catch(error => console.error(error)); 
   }
 }
-
+ 
 
 // make API calls and update UI for each location
 function getLocation() {
