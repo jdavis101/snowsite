@@ -8,9 +8,8 @@ script.src = 'https://maps.googleapis.com/maps/api/js?key=' + googleApiKey + '&c
 //script.async = true;
 document.head.appendChild(script);
 var apiUrl;
-var latitude,longitude;
+var latitude,longitude,long,lata;
 
-var cty, state, country, pos;
 
 
 getLocation();
@@ -121,7 +120,6 @@ function showPosition(position) {
   // "\nLongitude: " + position.coords.longitude);
   long = position.coords.longitude;
   lata = position.coords.latitude;
-  getLocationFromLatLng(lata, long);
 }
 
 function getWeatherIcon(weather) {
