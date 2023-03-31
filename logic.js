@@ -62,9 +62,9 @@ function success(position) {
       const state = addressComponents.find(component => component.types.includes("administrative_area_level_1")).long_name;
       const country = addressComponents.find(component => component.types.includes("country")).long_name;
       // Update the first location in the array with the new information
-      // locations[0].city = city;
-      // locations[0].state = state;
-      // locations[0].country = country;
+       locations[0].city = city;
+       locations[0].state = state;
+       locations[0].country = country;
 
       //adding to the list possibly 
       // locations.push({city: state, country, ".third-icon": ".third-info"})
