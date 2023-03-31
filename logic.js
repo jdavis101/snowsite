@@ -11,15 +11,12 @@ window.initMap = function() {
   // JS API is loaded and available
 };
 
-//script.async = true;
+script.async = true;
 document.head.appendChild(script);
 var apiUrl;
 var latitude,longitude,long,lata;
 
-
-
 getLocation();
-
 
 console.log("locations list");
 var locations = [
@@ -56,19 +53,23 @@ function success(position) {
   fetch(url)
     .then(response => response.json())
     .then(data => {
+      // wait
+      setTimeout(function(){
+      },500);
       // Extract city, state, and country from API response
       const addressComponents = data.results[0].address_components;
       const city = addressComponents.find(component => component.types.includes("locality")).long_name;
       const state = addressComponents.find(component => component.types.includes("administrative_area_level_1")).long_name;
       const country = addressComponents.find(component => component.types.includes("country")).long_name;
-      //console.log(`City: ${city}, State: ${state}, Country: ${country}`);
       // Update the first location in the array with the new information
-      locations[0].city = city;
-      locations[0].state = state;
-      locations[0].country = country;
+      // locations[0].city = city;
+      // locations[0].state = state;
+      // locations[0].country = country;
 
-      //dynamically updated locations list
-      
+      //adding to the list possibly 
+      // locations.push({city: state, country, ".third-icon": ".third-info"})
+
+      // dynamically updated locations list
       // locations[0].city = "Anadyr";
       // locations[0].state = "Chukotka Autonomous Okrug";
       // locations[0].country = "Russia";
@@ -79,12 +80,9 @@ function success(position) {
     })
     .catch(error => console.log(error));
 }
-
 function error(error) {
   console.log(error.message);
 }
-
-//Code ran right afterlocation list
 function loopyloop(){
   for (let i = 0; i < locations.length; i++) {
     console.log("locations.foreach()");
@@ -101,6 +99,7 @@ function loopyloop(){
         const kelvin = data.main.temp;
         const k2f = (kelvin - 273.15) * (9 / 5) + 32;
         const weatherInfo = k2f.toFixed() + "°F " + location.city;
+        // Set the icons for the weather on homepage
         document.querySelector(location.iconSelector).innerHTML = weatherIcon;
         document.querySelector(location.infoSelector).innerHTML = weatherInfo;
       })
@@ -108,7 +107,6 @@ function loopyloop(){
   }
 }
  
-
 // make API calls and update UI for each location
 function getLocation() {
   console.log("getLocation()");
@@ -122,14 +120,13 @@ function getLocation() {
 //  what is this position and where is it coming from?
 function showPosition(position) {
   console.log("showposition()" );
-  // console.log("Latitude: " + position.coords.latitude + 
-  // "\nLongitude: " + position.coords.longitude);
   long = position.coords.longitude;
   lata = position.coords.latitude;
 }
 
 function getWeatherIcon(weather) {
   console.log("getWeatherIcon()");
+  // add weather icons for all weather types
   switch (weather) {
     case 'Clear':
       return '<i class="fas fa-sun"></i>';
