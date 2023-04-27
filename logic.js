@@ -1,13 +1,11 @@
 //remove weather Api and googl api before pushing to  repo
 
-// import {
-//   //from hidden file 
-//   weatherApiKey,
-//   googleApiKey
-// } from './.git/secret.js';
+import {
+  //from hidden file 
+  weatherApiKey,
+  googleApiKey
+} from './.git/secret.js';
 
-let weatherApiKey = "fe2dfdc3554aad1af9c1e7ea2e949a5f"
-let googleApiKey = "AIzaSyCDnV1-nhVjrALhCR5kvBbp5Tbk_xm1nMM"
 
 var script = document.createElement('script');
 //srcipt for google api key in order to encapsulate the sensitive information
@@ -140,6 +138,7 @@ function showPosition(position) {
 function getWeatherIcon(weather) {
   console.log("getWeatherIcon()");
   // add weather icons for all weather types
+  console.log("The value of the weather is " + weather);
   switch (weather) {
     case 'Clear':
       return '<i class="fas fa-sun"></i>';
@@ -149,7 +148,10 @@ function getWeatherIcon(weather) {
       return '<i class="fas fa-cloud-rain"></i>';
     case 'Snow':
       return '<i class="fas fa-snowflake"></i>';
-    case 'Haze':
+    // case 'Haze':
+    //   return '';
+    // case 'Mist':
+    //   return '';
     case 'Fog':
       return '<i class="fa-solid fa-smog"></i>';
     default:
