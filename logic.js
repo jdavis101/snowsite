@@ -64,26 +64,32 @@ function success(position) {
       setTimeout(function(){
       },500);
       // Extract current city, state, and country from API response
-      const addressComponents = data.results[0].address_components;
-      const city = addressComponents.find(component => component.types.includes("locality")).long_name;
-      const state = addressComponents.find(component => component.types.includes("administrative_area_level_1")).long_name;
-      const country = addressComponents.find(component => component.types.includes("country")).long_name;
-      // Update the first location in the array with the current location information
-       locations[0].city = city;
-       locations[0].state = state;
-       locations[0].country = country;
+      try{
+        const addressComponents = data.results[0].address_components;
+        const city = addressComponents.find(component => component.types.includes("locality")).long_name;
+        const state = addressComponents.find(component => component.types.includes("administrative_area_level_1")).long_name;
+        const country = addressComponents.find(component => component.types.includes("country")).long_name;
+        // Update the first location in the array with the current location information
+        locations[0].city = city;
+        locations[0].state = state;
+        locations[0].country = country;
 
-      //adding to the list possibly 
-      // locations.push({city: state, country, ".third-icon": ".third-info"})
+        //adding to the list possibly 
+        // locations.push({city: state, country, ".third-icon": ".third-info"})
 
-      // dynamically updated locations list
-      // locations[0].city = "Anadyr";
-      // locations[0].state = "Chukotka Autonomous Okrug";
-      // locations[0].country = "Russia";
+        // dynamically updated locations list
+        // locations[0].city = "Anadyr";
+        // locations[0].state = "Chukotka Autonomous Okrug";
+        // locations[0].country = "Russia";
 
-      // Now you can run any code that relies on the updated location information
-      console.log(locations);
-      loopyloop();
+        // Now you can run any code that relies on the updated location information
+        console.log(locations);
+        loopyloop();
+      }
+      catch (error){
+        console.log("Invalid Google Api Data returned")
+      }
+      
     })
     .catch(error => console.log(error));
 }
