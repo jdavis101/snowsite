@@ -144,14 +144,12 @@ function getWeatherIcon(weather) {
       return '<i class="fas fa-sun"></i>';
     case 'Clouds':
       return '<i class="fas fa-cloud"></i>';
+    //Fall through for mist and rain
     case 'Rain':
+    case 'Mist':
       return '<i class="fas fa-cloud-rain"></i>';
     case 'Snow':
       return '<i class="fas fa-snowflake"></i>';
-    // case 'Haze':
-    //   return '';
-    // case 'Mist':
-    //   return '';
     case 'Fog':
       return '<i class="fa-solid fa-smog"></i>';
     default:
