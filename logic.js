@@ -1,9 +1,16 @@
-import {
-  weatherApiKey,
-  googleApiKey
-} from './.git/secret.js';
+//remove weather Api and googl api before pushing to  repo
+
+// import {
+//   //from hidden file 
+//   weatherApiKey,
+//   googleApiKey
+// } from './.git/secret.js';
+
+let weatherApiKey = "fe2dfdc3554aad1af9c1e7ea2e949a5f"
+let googleApiKey = "AIzaSyCDnV1-nhVjrALhCR5kvBbp5Tbk_xm1nMM"
 
 var script = document.createElement('script');
+//srcipt for google api key in order to encapsulate the sensitive information
 script.src = 'https://maps.googleapis.com/maps/api/js?key=' + 
 googleApiKey + '&callback=initMap';
 
@@ -53,15 +60,15 @@ function success(position) {
   fetch(url)
     .then(response => response.json())
     .then(data => {
-      // wait
+      // Timeout so that api calls are not constantly pinging for information before responses can be generated
       setTimeout(function(){
       },500);
-      // Extract city, state, and country from API response
+      // Extract current city, state, and country from API response
       const addressComponents = data.results[0].address_components;
       const city = addressComponents.find(component => component.types.includes("locality")).long_name;
       const state = addressComponents.find(component => component.types.includes("administrative_area_level_1")).long_name;
       const country = addressComponents.find(component => component.types.includes("country")).long_name;
-      // Update the first location in the array with the new information
+      // Update the first location in the array with the current location information
        locations[0].city = city;
        locations[0].state = state;
        locations[0].country = country;
