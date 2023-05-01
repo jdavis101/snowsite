@@ -110,10 +110,18 @@ nav li a{
 }
 
 .section2{
-    color: #fff;
-    max-height: max-content;
-    
+    height: 100vh;
+    background-color: #0a9396;
+}
 
+.section2 p{
+    font-size: 100px;
+    text-align: left;
+    color: #fff;
+    margin-top: 0%;
+    padding-bottom: 20px;
+    position: relative;
+    text-align: center;
 }
 
 
