@@ -30,10 +30,7 @@ nav li a{
     padding: 20px;
 }
 
-/* class styling of navigation bar */
-.container{
-    
-}
+
 
 /* adding padding to the search buttong */
 .fa-magnifying-glass{
@@ -69,11 +66,11 @@ nav li a{
 
 
 .headertext{
-    margin-top: 7%;
+    margin-top: 25%;
     padding-left: 45px;
     padding-right: 45px;
     padding-bottom: 20px;
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
 
@@ -112,7 +109,20 @@ nav li a{
     font-size: 25px;
 }
 
+.section2{
+    height: 100vh;
+    background-color: #3e6ca5;
+}
 
+.section2 p{
+    font-size: 100px;
+    text-align: left;
+    color: #fff;
+    margin-top: 0%;
+    padding-bottom: 20px;
+    position: relative;
+    text-align: center;
+}
 
 
 
