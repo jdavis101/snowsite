@@ -157,4 +157,10 @@ function getWeatherIcon(weather) {
   }
 }
 
+function parallax() {
+  const header = document.getElementById('header');
+  header.style.backgroundPositionY = -window.scrollY * .5 + 'px';
+  window.addEventListener('scroll', parallax);
+}
+
 
