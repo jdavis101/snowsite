@@ -85,6 +85,7 @@ function success(position) {
         loopyloop();
       }
       catch (error){
+        console.log(addressComponents)
         console.log("Invalid Google Api Data returned")
       }
       
