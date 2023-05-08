@@ -105,17 +105,29 @@ nav li a {
 .section2 {
   height: 100vh;
   background-color: #3e6ca5;
+  position: relative;
 }
 
-.section2 p {
+.section2 h1 {
   font-size: 100px;
-  text-align: left;
   color: #fff;
-  margin-top: 0%;
+  /* margin-top: 0%; */
   padding-bottom: 20px;
   position: relative;
   text-align: center;
 }
+
+.section2 h3{
+  padding-left: 10%;
+  padding-top: 5%;
+  font-size: 30px;
+}
+
+.section2 p{
+  padding-left: 10%;
+  font-size: 30px;
+}
+
 
 /* Mobile config */
 /* do not add big photo, for loading purposes */
