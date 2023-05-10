@@ -100,19 +100,20 @@ nav li a {
   padding-top: 15px;
   font-size: 25px;
 }
-/* Section 2 */
+
+/*----------------------------Section 2-----------------------------------------*/
 
 .section2 {
   height: 100vh;
-  width: 50%;
-  background-color: #3e6ca5;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 5%;
+  /* background-color: #3e6ca5; */
   position: relative;
 }
 
 .section2 h1 {
   font-size: 100px;
   color: #fff;
-  /* margin-top: 0%; */
   padding-bottom: 20px;
   position: relative;
   text-align: center;
@@ -129,6 +130,21 @@ nav li a {
   font-size: 30px;
 }
 
+.section3 {
+  /* width: 50%;
+  align-items: right; */
+
+}
+
+.float-container {
+  
+}
+
+.float-child {
+  width: 50%;
+  float: left;
+  /* border: 2px solid rgb(255, 3, 3); */
+}  
 
 /* Mobile config */
 /* do not add big photo, for loading purposes */
