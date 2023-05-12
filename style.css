@@ -6,6 +6,7 @@
 }
 
 body {
+  /* why is the padding off the top ?!?!*/
   background: #000814;
   color: #fff;
 }
@@ -38,7 +39,7 @@ nav li a {
   margin-left: 40px;
   margin-right: 40px;
   padding: 20px;
-  position: relative;
+  position: fixed;
   overflow: hidden;
   text-align: center;
 }
