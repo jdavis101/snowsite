@@ -111,41 +111,65 @@ nav li a {
   background-position: center;
   background-attachment: fixed;
 }
+.section2title{
+  text-align: center;
+}
 
 .section2 {
-  height: 100vh;
+  /* height: 70%;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 5%;
-  /* background-color: #3e6ca5; */
-  position: relative;
+  /* background-color: #3e6ca5; 
+  position: relative; */
+  
 }
 
 .section2 h1 {
   font-size: 100px;
-  color: #fff;
+  color: #000814;
   padding-bottom: 20px;
   position: relative;
-  text-align: center;
+  padding-left: 10%;
+  padding-top: 10%;
+  /* text-align: left; */
 }
 
 .section2 h3{
   padding-left: 10%;
   padding-top: 5%;
   font-size: 40px;
+  color: #000814;
 }
 
 .section2 p{
   padding-left: 10%;
   font-size: 30px;
+  color: #000814;
 }
 
-.section3 {
-  /* width: 50%;
-  align-items: right; */
+.section3 h1 {
+  font-size: 100px;
+  color: #000814;
+  padding-bottom: 20px;
+  position: relative;
+  text-align: center;
+}
 
+.section3 h3{
+  padding-left: 10%;
+  padding-top: 27%;
+  font-size: 40px;
+  color: #000814;
+}
+
+.section3 p{
+  padding-left: 10%;
+  font-size: 30px;
+  color: #000814;
 }
 
 .float-container {
+  /* padding-top: 20px; */
   
 }
 
