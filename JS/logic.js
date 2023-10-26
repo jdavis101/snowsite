@@ -4,7 +4,7 @@ import {
   //from hidden file 
   weatherApiKey,
   googleApiKey
-} from './.git/secret.js';
+} from '../.git/secret.js';
 
 
 var script = document.createElement('script');
