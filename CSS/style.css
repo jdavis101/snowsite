@@ -169,11 +169,6 @@ nav li a {
   color: #000814;
 }
 
-.float-container {
-  /* padding-top: 20px; */
-  
-}
-
 .float-child {
   width: 50%;
   float: left;
