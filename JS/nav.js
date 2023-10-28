@@ -1,5 +1,5 @@
 nav();
 
 function nav() {
-    $("#nav-placeholder").load("/nav.html");
+    $("#nav-placeholder").load("/HTML/nav.html");
 }
