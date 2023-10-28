@@ -1,10 +1,10 @@
 //remove weather Api and googl api before pushing to  repo
-
+// Main
 import {
   //from hidden file 
   weatherApiKey,
   googleApiKey
-} from './.git/secret.js';
+} from '../.git/secret.js';
 
 
 var script = document.createElement('script');
@@ -58,6 +58,7 @@ function success(position) {
   fetch(url)
     .then(response => response.json())
     .then(data => {
+      console.log("api data = " + JSON.stringify(data, null, 2)); 
       // Timeout so that api calls are not constantly pinging for information before responses can be generated
       setTimeout(function(){
       },500);
@@ -85,6 +86,7 @@ function success(position) {
         loopyloop();
       }
       catch (error){
+        console.log(addressComponents)
         console.log("Invalid Google Api Data returned")
       }
       
@@ -155,6 +157,12 @@ function getWeatherIcon(weather) {
     default:
       return '<i class="fas fa-question"></i>';
   }
+}
+
+function parallax() {
+  const header = document.getElementById('header');
+  header.style.backgroundPositionY = -window.scrollY * .5 + 'px';
+  window.addEventListener('scroll', parallax);
 }
 
 

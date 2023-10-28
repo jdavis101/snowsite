@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+body {
+  /* why is the padding off the top ?!?!*/
+  background: #000814;
+  color: #fff;
+}
+
+/* Nav spacing */
+nav {
+  flex-wrap: wrap;
+}
+
+/* nav styling */
+nav li {
+  display: inline-block;
+  list-style: none;
+}
+
+/* text styling */
+nav li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 20px;
+}
+
+/* adding padding to the search buttong */
+.fa-magnifying-glass {
+  padding-left: 20px;
+}
+
+.topnav {
+  margin-left: 40px;
+  margin-right: 40px;
+  padding: 20px;
+  position: fixed;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* full screen background image */
+#home {
+  width: 100%;
+  height: 100vh;
+  background-image: url(/images/homepic.webp);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#header2 {
+  width: 100%;
+  height: 50%;
+  background-color: rgba(21, 86, 154, 255);
+  background-size: cover;
+  background-position: center;
+}
+
+.mainText {
+  /* margin-top: 15%; */
+  padding-left: 45px;
+  padding-right: 45px;
+  padding-bottom: 20px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.mainText p {
+  /* margin-top: 7%; */
+  font-size: 100px;
+  text-align: left;
+}
+
+.mainText h3 {
+  font-size: 20px;
+}
+
+.sreport {
+  font-size: 40px;
+  color: #fff;
+  text-align: center;
+}
+
+#snowReportBox {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 15px;
+  width: 27%;
+  margin-left: 60%;
+  margin-top: 12%;
+}
+
+.ricons {
+  padding-top: 15px;
+  font-size: 25px;
+}
+
+/*----------------------------Section 2-----------------------------------------*/
+#peak {
+  width: 100%;
+  height: 100vh;
+  /* filter: brightness(70%); */
+  background-image: url(/images/snowPeak.webp);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.section2title{
+  text-align: center;
+}
+
+.section2 {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 15px;
+  margin-top: 10%;
+  margin-left: 5%;
+  padding-bottom: 20px;
+  width: fit-content;
+}
+  
+.section2 h1 {
+  font-size: 100px;
+  color: #fff;
+  padding-bottom: 20px;
+  position: relative;
+  padding-left: 10%;
+  padding-top: 10%;
+  /* text-align: left; */
+}
+
+.section2 h3{
+  padding-left: 10%;
+  padding-top: 5%;
+  font-size: 40px;
+  color: #fff;
+}
+
+.section2 p{
+  padding-left: 10%;
+  font-size: 30px;
+  color: #fff;
+}
+
+.section3 h1 {
+  font-size: 100px;
+  color: #000814;
+  padding-bottom: 20px;
+  position: relative;
+  text-align: center;
+}
+
+.section3 h3{
+  padding-left: 10%;
+  padding-top: 27%;
+  font-size: 40px;
+  color: #000814;
+}
+
+.section3 p{
+  padding-left: 10%;
+  font-size: 30px;
+  color: #000814;
+}
+
+.float-container {
+  /* padding-top: 20px; */
+  
+}
+
+.float-child {
+  width: 50%;
+  float: left;
+  /* border: 2px solid rgb(255, 3, 3); */
+}  
+
+/* Mobile config */
+/* do not add big photo, for loading purposes */
