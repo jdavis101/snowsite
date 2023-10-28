@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-
+<!-- Main -->
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,24 +9,21 @@
     <link rel="stylesheet" href="CSS\style.css">
     <link rel="shortcut icon" href="#">
     <script src="https://kit.fontawesome.com/3614e86d32.js" crossorigin="anonymous"></script>
-    <script  defer src="logic.js" type="module"></script>
+    <script  defer src="JS/logic.js" type="module"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 
-<body>
+<!-- why does this fix the styling issue? -->
+<body id="home">
     <!-- Section 1 -->
-    <div id="layout">
+    <div id="home">
         <div class="container">
             
             <div id="nav-placeholder">
             </div>
-            <script>
-                $(function () {
-                    $("#nav-placeholder").load("nav.html");
-                });
-            </script>
+            <script src="/JS/nav.js"></script>
             <!--end of Navigation bar-->
-            <div id="shade">
+            <div id="snowReportBox">
                 <!-- snow report box only fit text -->
                 <h3 class="sreport">Snow Report</h3>
                 <!-- <br> -->
@@ -60,17 +57,23 @@
         </div>
     </div>
     <!-- Section 2 -->
-    <div>
-        <div>
+    <div class="float-container">
+        <div class="float-child">
             <div class="section2 ">
                 <!-- brim is the background image on the homepage text -->
-                <p>Slopes</p>
-                <!-- <h3>Your all in one guide to Snowboarding, Skiing, and anything
-                    in between.
-                </h3> -->
+                <h1>Slopes</h1>
+                <h3>Appalachian Ski Mountain</h3>
+                <p>Activities: Snowboarding, Skiing, Tubing, Ice Skating</p>
+                <h3>Sugar Mountain</h3>
+                <p>random text so i know where this starts and ends</p>
+                <h3>Beech Mountain</h3>
+                <p>random text so i know where this starts and ends</p>
             </div>
         </div>
+
     </div>
+    <!-- Section 3  -->
+    <div id = "peak"></div>
 </body>
 
 </html>

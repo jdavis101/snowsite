@@ -1,10 +1,10 @@
 //remove weather Api and googl api before pushing to  repo
-
+// Main
 import {
   //from hidden file 
   weatherApiKey,
   googleApiKey
-} from './.git/secret.js';
+} from '../.git/secret.js';
 
 
 var script = document.createElement('script');
@@ -58,6 +58,7 @@ function success(position) {
   fetch(url)
     .then(response => response.json())
     .then(data => {
+      console.log("api data = " + JSON.stringify(data, null, 2)); 
       // Timeout so that api calls are not constantly pinging for information before responses can be generated
       setTimeout(function(){
       },500);
